@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!-- saved from url=(0024)http://www.peachpit.com/ -->
+
+<html class="js no-touch hashchange borderradius boxshadow fontface generatedcontent video flash localstorage">
+<!--<![endif]-->
+
+
+<head>
+
+	<style>
+	       body, html {
+	           font-family: arial, sans-serif;
+	           font-size: 11pt;
+	       }
+
+	       .vis-item.vis-background.orange {
+	               background-color: rgba(204, 111, 30, 0.90);
+	       }
+
+	       .vis-item.vis-background.brownish {
+	               background-color: rgba(153,108,68, 0.90);
+	       }
+	       .vis-item.vis-background.yellowish {
+	               background-color: rgba(255,247,97, 0.80);
+	       }
+	       .vis-item.vis-background.a {
+	               background-color: rgba(75,255,136, 0.20);
+	       }
+	       .vis-item.vis-background.green {
+	               background-color: rgba(30,204,40, 0.50);
+	       }
+	       textarea {
+	           width: 800px;
+	           height: 200px;
+	       }
+
+	       .buttons {
+	           margin: 20px 0;
+	       }
+
+	       .buttons input {
+	           padding: 10px;
+	       }
+	       #visualization {
+	               position: relative;
+	       }
+
+	</style>
+	<script src="./vis/dist/vis.js">
+	</script>
+	<link href="./vis/dist/vis-timeline-graph2d.min.css" rel="stylesheet" type="text/css">
+	<script src="./vis/examples/googleAnalytics.js">
+	</script>
+	<meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+	<meta content="n9s1Hfuy2klYHk76bOjUXNU2CpHq4Pye1nc44J811ls=" name="verify-v1">
+
+	<title>TIMELINE</title>
+	<link href="./Peachpit_ Publishers of technology books, eBooks, and videos for creative people_files/style-blessed1.css" rel="stylesheet" type="text/css">
+	<link href="./Peachpit_ Publishers of technology books, eBooks, and videos for creative people_files/style.css" rel="stylesheet" type="text/css">
+	<link href="./Peachpit_ Publishers of technology books, eBooks, and videos for creative people_files/print.css" media="print" rel="stylesheet" type="text/css">
+	<link href="./Peachpit_ Publishers of technology books, eBooks, and videos for creative people_files/css" rel="stylesheet" type="text/css">
+	<script async src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/4148.js" type="text/javascript">
+	</script>
+	<script async src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/analytics.js">
+	</script>
+	<script async src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/fbds.js">
+	</script>
+	<script language="JavaScript" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/AdobeAnalyticsScript.js" type="text/JavaScript">
+	</script>
+	<script src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/satelliteLib-63bf30c33f6ba3bae4caf7e6235acded2db3060d.js">
+	</script>
+	<script type="text/javascript">
+	        var arr = window.location.pathname.split('/');
+	        var host = window.location.host;
+	        var siteId = '';
+
+	        if(host.indexOf('informit') != -1) {
+	          siteId = 'InformIT';
+	        }
+	        else if(host.indexOf('peachpit') != -1) {
+	          siteId = 'Peachpit';
+	        }
+	        else if(host.indexOf('que') != -1) {
+	          siteId = 'Que';
+	        }
+	        else if(host.indexOf('certification') != -1) {
+	          siteId = 'PITC';
+	        }
+
+	        var digitalData = {
+	                            version: "1.0",
+	                            site: {
+	                                    siteId: siteId,
+	                                    siteLabel: "Peachpit Press",
+	                                    domain: location.host,
+	                                    siteSection: arr[1]
+	                                  },
+	                          page:{
+	                                pageInfo:{
+	                                          pageName: ':' + arr[1],
+	                                          pageTitle:document.title,
+	                                          pageURL:window.location.pathname + window.location.search + window.location.hash
+	                                        }
+	                               }
+	                          };
+
+	        if(arr[1].indexOf('.asp') != -1 || arr[1].indexOf('.aspx') != -1) {
+	        var splitPageData = arr[1].split('.');
+	        digitalData["site"]["siteSection"]='';
+	        digitalData["page"]["pageInfo"]["pageName"]=':' + splitPageData[0];
+	        }
+
+	        if(CheckFormPage() == true) {
+	          digitalData["page"] = {
+	                              pageInfo:{
+	                                        formName:" ",
+	                                        pageURL:window.location.pathname + window.location.search + window.location.hash,
+
+	                                        siteSection: arr[1]
+	                                      }
+	                              };
+	        }
+	</script>
+	<script language="JavaScript" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/modernizr.custom.js" type="text/javascript">
+	</script>
+	<script language="JavaScript" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/jquery.js" type="text/JavaScript">
+	</script>
+	<script language="JavaScript" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/global.js" type="text/JavaScript">
+	</script><!--[if lte IE 8]><script language="JavaScript" src="/display/common/javascript/respond.min.js" type="text/JavaScript"></script><![endif]-->
+
+	<script language="JavaScript" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/swfobject.js" type="text/JavaScript">
+	</script>
+	<script language="JavaScript" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/jquery-ui-1.10.2.custom.min.js" type="text/JavaScript">
+	</script>
+	<script language="JavaScript" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/fastclick.min.js" type="text/JavaScript">
+	</script>
+	<script>
+	          (function(d) {
+	          var e = d.createElement('script');
+	          e.src = d.location.protocol + '//app.yieldify.com/yieldify/code.js?yieldify_id=1909&loca='+window.location.href;
+	          e.async = true;
+	          d.getElementsByTagName("head")[0].appendChild(e);
+	          }(document));
+	</script>
+	<script async src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/code.js">
+	</script>
+	<script>
+	        (function() {
+	            var _fbq = window._fbq || (window._fbq = []);
+	            if (!_fbq.loaded) {
+	                var fbds = document.createElement('script');
+	                fbds.async = true;
+	                fbds.src = '//connect.facebook.net/en_US/fbds.js';
+	                var s = document.getElementsByTagName('script')[0];
+	                s.parentNode.insertBefore(fbds, s);
+	                _fbq.loaded = true;
+	            }
+	            _fbq.push(['addPixelId', '730048657068506']);
+	        })();
+
+	        window._fbq = window._fbq || [];
+	        window._fbq.push(['track', 'PixelInitialized', {}]);
+	</script><noscript>&lt;img height="1" width="1" alt="" style="display:none" src="https://www.facebook.com/tr?id=730048657068506&amp;amp;ev=PixelInitialized" /&gt;</noscript>
+	<script src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/s-code-contents-821cae183e39a5ab4c8ed3e498e8a14383ebf7c4.js">
+	</script>
+	<script async src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/yieldify_1472724462.js">
+	</script>
+	<script async="true" src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/campaigns.json" type="text/javascript">
+	</script>
+	<link href="./Peachpit_ Publishers of technology books, eBooks, and videos for creative people_files/yieldify-styles-min.css" rel="stylesheet" type="text/css">
+</head>
+
+<body class="body">
+	<div class="wrapper">
+		<div id="tag">
+			<p>TIMELINE</p>
+
+		</div>
+		<script src="./Peachpit_%20Publishers%20of%20technology%20books,%20eBooks,%20and%20videos%20for%20creative%20people_files/jquery.flexslider-min.js" type="text/JavaScript">
+		</script>
+		<script type="application/ld+json">
+		        {
+		        "@context": "http://schema.org",
+		        "@type": "WebSite",
+		        "url": "http://www.peachpit.com/",
+		        "potentialAction": {
+		        "@type": "SearchAction",
+		        "target": "http://www.peachpit.com/search/index.aspx?query={search_term}",
+		        "query-input": "required name=search_term"
+		        }
+		        }
+		</script>
+		<script type="text/JavaScript">
+		        $(document).ready(function () {
+		            if ($('html').hasClass('ie') && $('.videoslide').length) {
+		                $('.flexslider').flexslider({
+		                    animation: "slide",
+		                    slideshow: false,
+		                    animationDuration: 500,
+		                    controlsContainer: ".flex-container",
+		                    directionNav: true,
+		                    pauseOnAction: false,
+		                    before: function (slider) {
+		                        jwplayer().stop();
+		                    }
+		                });
+		            } else {
+		                $('.flexslider').flexslider({
+		                    slideshow: false,
+		                    animationDuration: 500,
+		                    controlsContainer: ".flex-container",
+		                    directionNav: true,
+		                    pauseOnAction: false
+		                });
+		            };
+		            $(".col").equalHeights();
+		        });
+		</script>
+
+		<div class="homepage" id="content" style="min-height: 1142px;">
+
+			<div id="column2">
+					<div id="images"></div>
+			</div>
+
+			<div id="column1">
+				
+<textarea id="vis_index0" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:12:02", "content": " <span style=\"color: #7c795d;\">l</span>", "start": "2014-11-05 16:12:02", "group": 0, "type": "box", "id": 811}, {"end": "2014-11-05 16:14:26", "content": " <span style=\"color: #7c795d;\">u</span>", "start": "2014-11-05 16:14:26", "group": 0, "type": "box", "id": 812}, {"end": "2014-11-05 16:14:27", "content": " <span style=\"color: #7c795d;\">u</span>", "start": "2014-11-05 16:14:27", "group": 0, "type": "box", "id": 813}, {"end": "2014-11-05 16:14:28", "content": " <span style=\"color: #7c795d;\">uuuuuu</span>", "start": "2014-11-05 16:14:28", "group": 0, "type": "box", "id": 814}, {"end": "2014-11-05 16:14:29", "content": " <span style=\"color: #7c795d;\">uuuuu</span>", "start": "2014-11-05 16:14:29", "group": 0, "type": "box", "id": 815}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index1" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:12:02", "content": " <span style=\"color: #7c795d;\">l</span>", "start": "2014-11-05 16:12:02", "group": 0, "type": "box", "id": 2283}, {"end": "2014-11-05 16:14:26", "content": " <span style=\"color: #7c795d;\">u</span>", "start": "2014-11-05 16:14:26", "group": 0, "type": "box", "id": 2284}, {"end": "2014-11-05 16:14:27", "content": " <span style=\"color: #7c795d;\">u</span>", "start": "2014-11-05 16:14:27", "group": 0, "type": "box", "id": 2285}, {"end": "2014-11-05 16:14:28", "content": " <span style=\"color: #7c795d;\">uuuuuu</span>", "start": "2014-11-05 16:14:28", "group": 0, "type": "box", "id": 2286}, {"end": "2014-11-05 16:14:29", "content": " <span style=\"color: #7c795d;\">uuuuu</span>", "start": "2014-11-05 16:14:29", "group": 0, "type": "box", "id": 2287}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index2" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:12:02", "content": " <span style=\"color: #7c795d;\">l</span>", "start": "2014-11-05 16:12:02", "group": 0, "type": "box", "id": 3755}, {"end": "2014-11-05 16:14:26", "content": " <span style=\"color: #7c795d;\">u</span>", "start": "2014-11-05 16:14:26", "group": 0, "type": "box", "id": 3756}, {"end": "2014-11-05 16:14:27", "content": " <span style=\"color: #7c795d;\">u</span>", "start": "2014-11-05 16:14:27", "group": 0, "type": "box", "id": 3757}, {"end": "2014-11-05 16:14:28", "content": " <span style=\"color: #7c795d;\">uuuuuu</span>", "start": "2014-11-05 16:14:28", "group": 0, "type": "box", "id": 3758}, {"end": "2014-11-05 16:14:29", "content": " <span style=\"color: #7c795d;\">uuuuu</span>", "start": "2014-11-05 16:14:29", "group": 0, "type": "box", "id": 3759}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index3" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:16:04", "content": " <span style=\"color: #7c795d;\">wordreference\ndiccio</span>", "start": "2014-11-05 16:16:48", "group": 0, "type": "box", "id": 5227}, {"end": "2014-11-05 16:16:08", "content": " <span style=\"color: #7c795d;\">nario bilingue\n</span>", "start": "2014-11-05 16:16:06", "group": 0, "type": "box", "id": 5228}, {"end": "2014-11-05 16:16:14", "content": " <span style=\"color: #7c795d;\">google\n</span>", "start": "2014-11-05 16:16:13", "group": 1, "type": "box", "id": 5229}, {"end": "2014-11-05 16:17:38", "content": " <span style=\"color: #7c795d;\">google\n</span>", "start": "2014-11-05 16:17:37", "group": 2, "type": "box", "id": 5230}, {"end": "2014-11-05 16:17:50", "content": " <span style=\"color: #7c795d;\">oxfor</span>", "start": "2014-11-05 16:17:49", "group": 3, "type": "box", "id": 5231}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index4" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:16:14", "content": " <span style=\"color: #7c795d;\">google\n</span>", "start": "2014-11-05 16:16:13", "group": 0, "type": "box", "id": 5629}, {"end": "2014-11-05 16:17:38", "content": " <span style=\"color: #7c795d;\">google\n</span>", "start": "2014-11-05 16:17:37", "group": 1, "type": "box", "id": 5630}, {"end": "2014-11-05 16:17:50", "content": " <span style=\"color: #7c795d;\">oxfor</span>", "start": "2014-11-05 16:17:49", "group": 2, "type": "box", "id": 5631}, {"end": "2014-11-05 16:18:05", "content": " <span style=\"color: #7c795d;\">poxford</span>", "start": "2014-11-05 16:18:56", "group": 0, "type": "box", "id": 5632}, {"end": "2014-11-05 16:18:13", "content": " <span style=\"color: #7c795d;\">wordre\n</span>", "start": "2014-11-05 16:18:11", "group": 3, "type": "box", "id": 5633}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index5" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:17:50", "content": " <span style=\"color: #7c795d;\">oxfor</span>", "start": "2014-11-05 16:17:49", "group": 3, "type": "box", "id": 5899}, {"end": "2014-11-05 16:18:05", "content": " <span style=\"color: #7c795d;\">poxford</span>", "start": "2014-11-05 16:18:56", "group": 4, "type": "box", "id": 5900}, {"end": "2014-11-05 16:18:13", "content": " <span style=\"color: #7c795d;\">wordre\n</span>", "start": "2014-11-05 16:18:11", "group": 5, "type": "box", "id": 5901}, {"end": "2014-11-05 16:19:23", "content": " <span style=\"color: #7c795d;\">Basics\n</span>", "start": "2014-11-05 16:19:21", "group": 6, "type": "box", "id": 5902}, {"end": "2014-11-05 16:19:44", "content": " <span style=\"color: #7c795d;\">hydrogen\n</span>", "start": "2014-11-05 16:19:43", "group": 7, "type": "box", "id": 5903}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index6" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:17:50", "content": " <span style=\"color: #7c795d;\">oxfor</span>", "start": "2014-11-05 16:17:49", "group": 0, "type": "box", "id": 6124}, {"end": "2014-11-05 16:18:13", "content": " <span style=\"color: #7c795d;\">poxfordwordre\n</span>", "start": "2014-11-05 16:18:56", "group": 1, "type": "box", "id": 6125}, {"end": "2014-11-05 16:19:23", "content": " <span style=\"color: #7c795d;\">Basics\n</span>", "start": "2014-11-05 16:19:21", "group": 2, "type": "box", "id": 6126}, {"end": "2014-11-05 16:19:44", "content": " <span style=\"color: #7c795d;\">hydrogen\n</span>", "start": "2014-11-05 16:19:43", "group": 3, "type": "box", "id": 6127}, {"end": "2014-11-05 16:20:29", "content": " <span style=\"color: #7c795d;\">Bases del hidrogeno</span>", "start": "2014-11-05 16:20:23", "group": 4, "type": "box", "id": 6128}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index7" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:19:23", "content": " <span style=\"color: #7c795d;\">Basics\n</span>", "start": "2014-11-05 16:19:21", "group": 0, "type": "box", "id": 6321}, {"end": "2014-11-05 16:19:44", "content": " <span style=\"color: #7c795d;\">hydrogen\n</span>", "start": "2014-11-05 16:19:43", "group": 1, "type": "box", "id": 6322}, {"end": "2014-11-05 16:20:29", "content": " <span style=\"color: #7c795d;\">Bases del hidrogeno</span>", "start": "2014-11-05 16:20:23", "group": 2, "type": "box", "id": 6323}, {"end": "2014-11-05 16:20:16", "content": " <span style=\"color: #7c795d;\">Segun el Centro de datosfuel\nalternative fuels m</span>", "start": "2014-11-05 16:20:52", "group": 2, "type": "box", "id": 6324}, {"end": "2014-11-05 16:21:31", "content": " <span style=\"color: #7c795d;\">translation spanish\n</span>", "start": "2014-11-05 16:21:26", "group": 3, "type": "box", "id": 6325}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index8" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:19:44", "content": " <span style=\"color: #7c795d;\">hydrogen\n</span>", "start": "2014-11-05 16:19:43", "group": 0, "type": "box", "id": 6503}, {"end": "2014-11-05 16:20:29", "content": " <span style=\"color: #7c795d;\">Bases del hidrogeno</span>", "start": "2014-11-05 16:20:23", "group": 1, "type": "box", "id": 6504}, {"end": "2014-11-05 16:20:16", "content": " <span style=\"color: #7c795d;\">Segun el Centro de datosfuel\nalternative fuels m</span>", "start": "2014-11-05 16:20:52", "group": 1, "type": "box", "id": 6505}, {"end": "2014-11-05 16:21:05", "content": " <span style=\"color: #7c795d;\">translation spanish\n de combustibles alternativos, el Hidrogeno 8H2</span>", "start": "2014-11-05 16:21:26", "group": 2, "type": "box", "id": 6506}, {"end": "2014-11-05 16:22:34", "content": " <span style=\"color: #7c795d;\">potentiall\nemission\n</span>", "start": "2014-11-05 16:22:23", "group": 3, "type": "box", "id": 6507}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+<textarea id="vis_index9" style="display: none;">[{"end": "2014-11-05 16:04:24", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:24", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160424_607304_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 8}, {"end": "2014-11-05 16:04:26", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:26", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160426_417001_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 9}, {"end": "2014-11-05 16:04:31", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:31", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160431_357906_Navigator_multimedia08.png", "group": 0, "type": "box", "id": 10}, {"end": "2014-11-05 16:04:35", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:35", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160435_207442_Navigator_multimedia08.png", "group": 1, "type": "box", "id": 11}, {"end": "2014-11-05 16:04:36", "content": " <span style=\"color: #7c795d;\">Left Click</span>", "start": "2014-11-05 16:04:36", "click_image": "file:///E:/UE4/Projects/PaulasCrazyIdea/Content/ResearchAnalyzer/example_log/click_images/20141105_160436_926599_Navigator_multimedia08.png", "group": 2, "type": "box", "id": 12}
+,{"end": "2014-11-05 16:20:16", "content": " <span style=\"color: #7c795d;\">Bases del hidrogenoSegun el Centro de datosfuel\nalternative fuels m</span>", "start": "2014-11-05 16:20:23", "group": 0, "type": "box", "id": 6667}, {"end": "2014-11-05 16:21:05", "content": " <span style=\"color: #7c795d;\">translation spanish\n de combustibles alternativos, el Hidrogeno 8H2</span>", "start": "2014-11-05 16:21:26", "group": 1, "type": "box", "id": 6668}, {"end": "2014-11-05 16:22:12", "content": " <span style=\"color: #7c795d;\">potentiall\nemission\n es un combustible alternativo de libre emision en potencia</span>", "start": "2014-11-05 16:22:23", "group": 2, "type": "box", "id": 6669}, {"end": "2014-11-05 16:23:54", "content": " <span style=\"color: #7c795d;\"> que puede ser producidoresource\ndomestic\n con recursos caseros.</span>", "start": "2014-11-05 16:23:23", "group": 0, "type": "box", "id": 6670}, {"end": "2014-11-05 16:25:16", "content": " <span style=\"color: #7c795d;\">Aunque en la actualidadwidely\n no es utilizado ampliamente como combustible para el transporte, los investigadores del gobierno y las industrias</span>", "start": "2014-11-05 16:25:18", "group": 0, "type": "box", "id": 6671}
+,{"id": "orange", "start": "2014-01-31", "end": "2019-02-02", "type": "background", "className": "orange"},{"id": "brownish", "start": "2000-01-31", "end": "2014-01-31", "type": "background", "className": "brownish"},{"id": "yellowish", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "yellowish"},{"id": "aqua", "start": "1900-01-31", "end": "2000-01-31", "type": "background", "className": "aqua"},{"id": "green", "start": "1850-01-31", "end": "1900-01-31", "type": "background", "className": "green"}]
+</textarea>
+	<div id="visualization"></div>
+
+
+
+	<script>
+
+	var currentValue = "vis_index9";
+  var currentValueNumerical = 9;
+ <!--currentValue start here. Do not delete this comment.-->
+
+	 var txtData = document.getElementById(currentValue);
+
+	 // Create an empty DataSet.
+	 // This DataSet is used for two way data binding with the Timeline.
+	 var items = new vis.DataSet();
+	 // create a timeline
+	 var container = document.getElementById('visualization');
+	 var options = {
+start: '2014-11-05 16:04:24',
+end: '2014-11-05 16:04:36',
+editable: false
+};<!--options start here. Do not delete this comment.-->
+	 var names = [['Focus-Proxy-Window|<br>FocusProxy'],['Focus-Proxy-Window|<br>FocusProxy'],['Focus-Proxy-Window|<br>FocusProxy'],['Navigator|<br>Nueva pestaña - Mozilla Firefox','Navigator|<br>Diccionario de la lengua española [sep_key] Real Academia Española - Mozilla Firefox','Navigator|<br>Facultad de Lenguas - Mozilla Firefox','Navigator|<br>Problema al cargar la página - Mozilla Firefox'],['Navigator|<br>Diccionario de la lengua española [sep_key] Real Academia Española - Mozilla Firefox','Navigator|<br>Facultad de Lenguas - Mozilla Firefox','Navigator|<br>Problema al cargar la página - Mozilla Firefox','Navigator|<br>oxford dictionary - Buscar con Google - Mozilla Firefox'],['Navigator|<br>Facultad de Lenguas - Mozilla Firefox','Navigator|<br>FL: Inglés - Mozilla Firefox','Navigator|<br>Facultad de Lenguas: Login to the site - Mozilla Firefox','Navigator|<br>Problema al cargar la página - Mozilla Firefox','Navigator|<br>Diccionario de la lengua española [sep_key] Real Academia Española - Mozilla Firefox','Navigator|<br>oxford dictionary - Buscar con Google - Mozilla Firefox','Navigator|<br>Diccionarios de Español, Ingles, Francés, Portugués - WordReference.com - Mozilla Firefox','Navigator|<br>Basics - English-Spanish Dictionary - WordReference.com - Mozilla Firefox'],['Navigator|<br>Problema al cargar la página - Mozilla Firefox','Navigator|<br>Diccionario de la lengua española [sep_key] Real Academia Española - Mozilla Firefox','Navigator|<br>Diccionarios de Español, Ingles, Francés, Portugués - WordReference.com - Mozilla Firefox','Navigator|<br>Basics - English-Spanish Dictionary - WordReference.com - Mozilla Firefox','Focus-Proxy-Window|<br>FocusProxy'],['Navigator|<br>Diccionarios de Español, Ingles, Francés, Portugués - WordReference.com - Mozilla Firefox','Navigator|<br>Basics - English-Spanish Dictionary - WordReference.com - Mozilla Firefox','Focus-Proxy-Window|<br>FocusProxy','Navigator|<br>alternative fuels meaning - Buscar con Google - Mozilla Firefox'],['Navigator|<br>Basics - English-Spanish Dictionary - WordReference.com - Mozilla Firefox','Focus-Proxy-Window|<br>FocusProxy','Navigator|<br>alternative fuels meaning - Buscar con Google - Mozilla Firefox','Navigator|<br>fuel - English-Spanish Dictionary - WordReference.com - Mozilla Firefox'],['Focus-Proxy-Window|<br>FocusProxy','Navigator|<br>alternative fuels meaning - Buscar con Google - Mozilla Firefox','Navigator|<br>fuel - English-Spanish Dictionary - WordReference.com - Mozilla Firefox']];<!--group names start here. Do not delete this comment.-->
+
+	 var timeline = new vis.Timeline(container, items, options);
+
+	 var click_screenshoot = new Image();
+	 var div2 = document.getElementById('images');
+   var user_is_browsing_the_images_mannually = false
+
+	 timeline.on('itemover', function (properties) {
+     if (items.get(properties.item).content.indexOf("Click") !== -1){
+  	   click_screenshoot.src = items.get(properties.item).click_image
+  	   div2.appendChild(click_screenshoot);
+       user_is_browsing_the_images_mannually = true
+     }
+	 });
+
+	 timeline.on('itemout', function (properties) {
+     if (items.get(properties.item).content.indexOf("Click") !== -1){
+       try{
+         <!--FIXME Eating exceptions is bad!.-->
+         div2.removeChild(click_screenshoot);
+         user_is_browsing_the_images_mannually = false
+       }catch(err){}
+     }
+	 });
+
+
+	 function loadData () {
+	   // get and deserialize the data
+		 if (txtData.value != null){
+	   var data = JSON.parse(txtData.value);
+
+	   // update the data in the DataSet
+	   //
+	   // Note: when retrieving updated data from a server instead of a complete
+	   // new set of data, one can simply update the existing data like:
+	   //
+	   //   items.update(data);
+	   //
+	   // Existing items will then be updated, and new items will be added.
+
+		 var groups = new vis.DataSet();
+		 var groupCount = names[currentValueNumerical].length;
+		 for (var g = 0; g < groupCount; g++) {
+		   groups.add({id: g, content: names[currentValueNumerical][g]});
+		 }
+
+		 timeline.setGroups(groups);
+	   items.clear();
+	   items.add(data);
+
+	   // adjust the timeline window such that we see the loaded data
+	   timeline.fit();
+		 }
+	 }
+
+	 // load the initial data
+	 loadData();
+	 var bMove = true;
+	 var bBackwards = false;
+	 var multiplier = 1;
+	 var sign = 1;
+
+	 function move (percentage) {
+	     var range = timeline.getWindow();
+	     var interval = range.end - range.start;
+
+	     timeline.setWindow({
+	         start: range.start.valueOf() + percentage * sign * multiplier,
+	         end:   range.end.valueOf()   + percentage * sign * multiplier
+	     });
+	 }
+
+	 function toTimestamp(strDate){
+	     var datum = Date.parse(strDate);
+	     return datum/1000;
+	  }
+
+	 setInterval(function(){
+	         if (bMove){
+	         move(+1000);
+	         var range = timeline.getWindow();
+	         var start = range.start.valueOf()/1000;
+	         var end = range.end.valueOf()/1000;
+	         var middle = (start+end)/2
+	         var start_middle = middle - 10;
+	         var end_middle = middle + 10;
+	         //TODO OPTIMIZATION this iterates over all of the items, items could be segmented into clusters by time.
+	         var positiveBalance = items.get({
+	           filter: function (item) {
+	               return (toTimestamp(item.start) > start_middle && toTimestamp(item.start) < end_middle );
+	           }
+	         });
+	         if(positiveBalance.length > 0){
+	           timeline.setSelection(String(positiveBalance[0].id), {focus: focus.checked});
+	           click_screenshoot.src = positiveBalance[0].click_image
+             if (positiveBalance[0].content.indexOf("Click") !== -1){
+  	           div2.appendChild(click_screenshoot);
+             }
+	         }else{
+             if (!user_is_browsing_the_images_mannually){
+  	           timeline.setSelection("", {focus: focus.checked});
+               try{
+                 <!--FIXME Eating exceptions is bad!.-->
+    	           div2.removeChild(click_screenshoot);
+               }catch(err){}
+             }
+	         }
+	       }
+	 }, 1000);
+   function setClusteringRange(newVal){
+		 newVal = Math.floor(newVal/10);
+     var newValue = "vis_index".concat(parseInt(newVal));
+     if (newValue != currentValue){
+      txtData = document.getElementById(newValue);
+      currentValue = newValue;
+			currentValueNumerical = newVal;
+      loadData();
+    }
+  }
+
+
+
+
+	</script>
+<!--TIMELINE start here. Do not delete this comment.-->
+			</div>
+
+
+	</div>
+	<script src="http://tags.mediaforge.com/js/1724" type="text/javascript">
+	</script>
+
+
+	<div id="siteNav">
+		<div class="cranium">
+			<ul id="nav">
+				<li class="first">
+					<a class="arrow">Velocidad &nbsp;</a>
+
+					<ul>
+						<li><a onclick="multiplier = 1;">&#215;1</a></li>
+						<li><a onclick="multiplier = 2;">&#215;2</a></li>
+						<li><a onclick="multiplier = 4;">&#215;4</a></li>
+						<li><a onclick="multiplier = 8;">&#215;8</a></li>
+						<li><a onclick="multiplier = 16;">&#215;16</a></li>
+						<li><a onclick="multiplier = 32;">&#215;64</a></li>
+						<li><a onclick="multiplier = 64;">&#215;64</a></li>
+						<li><a onclick="multiplier = 128;">&#215;128</a></li>
+						<li><a onclick="multiplier = 256;">&#215;256</a></li>
+					</ul>
+				</li>
+				<li class="first">
+					<a class="arrow">Clustering &nbsp;</a>
+
+					<ul>
+						<input type="range" id="clusteringRange" value="50"
+						oninput="setClusteringRange(this.value)" onchange="setClusteringRange(this.value)">
+					</ul>
+				</li>
+				<li><a onclick="sign = 1;">&#x3e;&#x3e;</a></li>
+				<li><a onclick="sign = -1;">&#x3c;&#x3c;</a></li>
+				<li><a onclick="window.bMove = true;">Reproducir</a></li>
+				<li><a onclick="window.bMove = false;">Pausar</a></li>
+			</ul>
+
+		</div>
+	</div>
+
+	<div id="strap">
+		<div class="cranium">
+			<div id="pearsonTopLogoLink">
+			</div>
+
+
+			<div id="pearsonAlwaysLearningImage">
+			</div>
+		</div>
+	</div>
+	<!--Google analytics-->
+	<script>
+	              (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function()
+	              { (i[r].q=i[r].q||[]).push(arguments)}
+	              ,i[r].l=1*new Date();a=s.createElement(o),
+	              m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	              })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+	              ga('create', 'UA-433761-5', 'auto', {'allowLinker': true});
+	              ga('require', 'linker');
+
+	              ga('linker:autoLink', ['www.peachpit.com', 'memberservices.informit.com']);
+	              ga('send', 'pageview');
+	</script>
+	<script type="text/JavaScript">
+	                  setTimeout(function(){var a=document.createElement("script");
+	                  var b=document.getElementsByTagName("script")[0];
+	                  a.src=document.location.protocol+"//dnn506yrbagrg.cloudfront.net/pages/scripts/0018/4148.js?"+Math.floor(new Date().getTime()/3600000);
+	                  a.async=true;a.type="text/javascript";b.parentNode.insertBefore(a,b)}, 1);
+	</script>
+	<script type="text/javascript">
+	       _satellite.pageBottom();
+	</script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+
+	<div id="visualization"></div>
+
+
+
+	<script>
+
+	 <!--currentValue start here. Do not delete this comment.-->
+
+	 var txtData = document.getElementById(currentValue);
+
+	 // Create an empty DataSet.
+	 // This DataSet is used for two way data binding with the Timeline.
+	 var items = new vis.DataSet();
+	 // create a timeline
+	 var container = document.getElementById('visualization');
+	 <!--options start here. Do not delete this comment.-->
+	 <!--group names start here. Do not delete this comment.-->
+
+	 var timeline = new vis.Timeline(container, items, options);
+
+	 var click_screenshoot = new Image();
+	 var div2 = document.getElementById('images');
+   var user_is_browsing_the_images_mannually = false
+
+	 timeline.on('itemover', function (properties) {
+     if (items.get(properties.item).content.indexOf("Click") !== -1){
+  	   click_screenshoot.src = items.get(properties.item).click_image
+  	   div2.appendChild(click_screenshoot);
+       user_is_browsing_the_images_mannually = true
+     }
+	 });
+
+	 timeline.on('itemout', function (properties) {
+     if (items.get(properties.item).content.indexOf("Click") !== -1){
+       try{
+         <!--FIXME Eating exceptions is bad!.-->
+         div2.removeChild(click_screenshoot);
+         user_is_browsing_the_images_mannually = false
+       }catch(err){}
+     }
+	 });
+
+
+	 function loadData () {
+	   // get and deserialize the data
+		 if (txtData.value != null){
+	   var data = JSON.parse(txtData.value);
+
+	   // update the data in the DataSet
+	   //
+	   // Note: when retrieving updated data from a server instead of a complete
+	   // new set of data, one can simply update the existing data like:
+	   //
+	   //   items.update(data);
+	   //
+	   // Existing items will then be updated, and new items will be added.
+
+		 var groups = new vis.DataSet();
+		 var groupCount = names[currentValueNumerical].length;
+		 for (var g = 0; g < groupCount; g++) {
+		   groups.add({id: g, content: names[currentValueNumerical][g]});
+		 }
+
+		 timeline.setGroups(groups);
+	   items.clear();
+	   items.add(data);
+
+	   // adjust the timeline window such that we see the loaded data
+	   timeline.fit();
+		 }
+	 }
+
+	 // load the initial data
+	 loadData();
+	 var bMove = true;
+	 var bBackwards = false;
+	 var multiplier = 1;
+	 var sign = 1;
+
+	 function move (percentage) {
+	     var range = timeline.getWindow();
+	     var interval = range.end - range.start;
+
+	     timeline.setWindow({
+	         start: range.start.valueOf() + percentage * sign * multiplier,
+	         end:   range.end.valueOf()   + percentage * sign * multiplier
+	     });
+	 }
+
+	 function toTimestamp(strDate){
+	     var datum = Date.parse(strDate);
+	     return datum/1000;
+	  }
+
+	 setInterval(function(){
+	         if (bMove){
+	         move(+1000);
+	         var range = timeline.getWindow();
+	         var start = range.start.valueOf()/1000;
+	         var end = range.end.valueOf()/1000;
+	         var middle = (start+end)/2
+	         var start_middle = middle - 10;
+	         var end_middle = middle + 10;
+	         //TODO OPTIMIZATION this iterates over all of the items, items could be segmented into clusters by time.
+	         var positiveBalance = items.get({
+	           filter: function (item) {
+	               return (toTimestamp(item.start) > start_middle && toTimestamp(item.start) < end_middle );
+	           }
+	         });
+	         if(positiveBalance.length > 0){
+	           timeline.setSelection(String(positiveBalance[0].id), {focus: focus.checked});
+	           click_screenshoot.src = positiveBalance[0].click_image
+             if (positiveBalance[0].content.indexOf("Click") !== -1){
+  	           div2.appendChild(click_screenshoot);
+             }
+	         }else{
+             if (!user_is_browsing_the_images_mannually){
+  	           timeline.setSelection("", {focus: focus.checked});
+               try{
+                 <!--FIXME Eating exceptions is bad!.-->
+    	           div2.removeChild(click_screenshoot);
+               }catch(err){}
+             }
+	         }
+	       }
+	 }, 1000);
+   function setClusteringRange(newVal){
+		 newVal = Math.floor(newVal/10);
+     var newValue = "vis_index".concat(parseInt(newVal));
+     if (newValue != currentValue){
+      txtData = document.getElementById(newValue);
+      currentValue = newValue;
+			currentValueNumerical = newVal;
+      loadData();
+    }
+  }
+
+
+
+
+	</script>
